@@ -5,13 +5,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>{{ config('app.name') }}</title>
-        <link rel="stylesheet" type="text/css" href="{{ mix('css/app.css') }}">
-        <link rel="stylesheet" type="text/css" href="{{ mix('css/all.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{asset('public/')}}{{ mix('/css/app.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{asset('public/')}}{{ mix('css/all.css') }}">
         
     </head>
     <body>
         
 
-    <script src="{{ mix('js/all.js') }}" ></script>
+    <script src="{{asset('public/')}}{{ mix('js/all.js') }}" ></script>
     </body>
 </html>
