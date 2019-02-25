@@ -3,26 +3,34 @@
         <div class="container">
           <div class="row">
             <div class="col-sm-8 col-md-7 py-4">
-              <h4 class="text-white">About</h4>
-              <p class="text-muted">SA Ecommerce is an ecommerce management platform developed using laravel .</p>
+              <h4 class="text-white">Category</h4>
+                <ul class="list-unstyled">
+
+                @foreach($categories as $category)
+                  <li>
+                    <a href="{{ $category->slug }}">{{ $category->name }}</a>
+                  </li>
+                @endforeach
+
+              </ul>
             </div>
             <div class="col-sm-4 offset-md-1 py-4">
               <h4 class="text-white">Menu</h4>
-              <ul class="list-unstyled">
+                <ul class="list-unstyled">
 
-              @guest()
+                @guest()
 
-                <li><a href="#" class="text-white">Create an Account</a></li>
-                <li><a href="#" class="text-white">Login</a></li>
+                  <li><a href="#" class="text-white">Create an Account</a></li>
+                  <li><a href="#" class="text-white">Login</a></li>
 
-              @endguest
+                @endguest
 
-              @auth()
-                <li><a href="#" class="text-white">My Profile</a></li>
-                <li><a href="#" class="text-white">Logout</a></li>
-              @endauth
+                @auth()
+                  <li><a href="#" class="text-white">My Profile</a></li>
+                  <li><a href="#" class="text-white">Logout</a></li>
+                @endauth
 
-                <li><a href="#" class="text-white">Cart</a></li>
+                  <li><a href="#" class="text-white">Cart</a></li>
 
               </ul>
             </div>
