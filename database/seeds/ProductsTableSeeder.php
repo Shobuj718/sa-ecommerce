@@ -19,7 +19,7 @@ class ProductsTableSeeder extends Seeder
         foreach($products as $product){
         	$url = 'https://lorempixel.com/640/480/?62480';
         	$product->addMediaFromUrl($url)
-        	->toMediaCollection();
+        	->toMediaCollection('products');
         }
     }
 }
