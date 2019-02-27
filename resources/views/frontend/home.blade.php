@@ -12,12 +12,17 @@
           @foreach($products as $product)
             <div class="col-md-4">
               <div class="card mb-4 shadow-sm">
-                <img class="card-img-top" src="{{ asset($product->getFirstMediaUrl('products')) }}" alt="{{ $product->title }}">
+
+                <a href="{{ route('product.details', $product->slug) }}">
+                  <img class="card-img-top" src="{{ asset($product->getFirstMediaUrl('products')) }}" alt="{{ $product->title }}">
+                </a>
 
                 <div class="card-body">
                   <p class="card-text">
 
+                  <a href="{{ route('product.details', $product->slug) }}">
                     {{ $product->title }}
+                  </a>
 
                   </p>
 
