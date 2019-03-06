@@ -20,8 +20,8 @@
 
                 @guest()
 
-                  <li><a href="#" class="text-white">Create an Account</a></li>
-                  <li><a href="#" class="text-white">Login</a></li>
+                  <li><a href="{{ route('register') }}" class="text-white">Create an Account</a></li>
+                  <li><a href="{{ route('login') }}" class="text-white">Login</a></li>
 
                 @endguest
 
@@ -30,7 +30,7 @@
                   <li><a href="#" class="text-white">Logout</a></li>
                 @endauth
 
-                  <li><a href="#" class="text-white">Cart</a></li>
+                  <li><a href="{{ route('cart.show') }}" class="text-white">Cart</a></li>
 
               </ul>
             </div>

@@ -1,0 +1,47 @@
+@extends('frontend.layouts.master')
+
+@section('main')
+
+	<div class="container">
+		
+		<br>
+		<h3 class="text-center">Register</h3>
+		<hr>
+
+		@include('frontend.partials.message')
+
+		<form action="{{ route('register') }}" method="post" class="form">
+
+			@csrf
+
+			<div class="form-group">
+				<label for="name">Full Name</label>
+				<input type="text" name="name" value="{{ old('name') }}" class="form-control" placeholder="Enter Your Full Name " required="">
+			</div>
+
+			<div class="form-group">
+				<label for="email">Email</label>
+				<input type="email" name="email" value="{{ old('email') }}"  class="form-control" placeholder="Enter Your Email " required="">
+			</div>
+
+			<div class="form-group">
+				<label for="phone_number">Phone Number</label>
+				<input type="text" name="phone_number" value="{{ old('phone_number') }}"  class="form-control" placeholder="Enter Your Phone Number " required="">
+			</div>
+
+			<div class="form-group">
+				<label for="password">Password</label>
+				<input type="password" name="password"  value="{{ old('password') }}"  class="form-control" placeholder="Enter Your Password " required="">
+			</div>
+
+			<div class="form-group">
+				<button type="submit" class="btn btn-block btn-success">
+					Register
+				</button>
+			</div>
+
+		</form>
+
+	</div>
+
+@endsection

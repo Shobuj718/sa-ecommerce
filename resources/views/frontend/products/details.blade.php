@@ -25,19 +25,29 @@
 						<span class="price h3 text-warning">
 							<span class="currency">BDT</span>
 							<span class="mum">
-								{{ $product->price }}
+							  @if($product->sale_price != null && $product->sale_price > 0)
+		                        BDT <strike> {{ $product->sale_price }} </strike> BDT {{ $product->sale_price }}
+		                      @else
+		                        BDT {{ $product->price }}
+		                      @endif
 							</span>
 						</span>
 					</p>
 
 					<dl class="item-property">
 						<dt>Description</dt>
-						<dd><p>{{ $product->description }}</p></dd>
+						<dd><p>{{ $product->descriptionn }}</p></dd>
 					</dl>
 
 					<hr>
 
-					<a href="">Add to Cart</a>
+					 <form action="{{ route('cart.add') }}" method="post">
+                          @csrf
+                          <input type="hidden" name="product_id" value="{{ $product->id }}">
+                          <button type="submit" class="btn btn-lg btn-outline-secondary">
+                          <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                      </form>
 
 				</article>
 			</aside>
